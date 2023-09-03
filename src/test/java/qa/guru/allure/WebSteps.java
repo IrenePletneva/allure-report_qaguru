@@ -2,12 +2,10 @@ package qa.guru.allure;
 
 import com.codeborne.selenide.Condition;
 
-import com.codeborne.selenide.Configuration;
 import io.qameta.allure.Step;
 
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.OutputType;
 import static com.codeborne.selenide.Selectors.withText;
