@@ -6,7 +6,7 @@
 .gradle
 build
 gradlew.bat
-.github
+.github/workflows
 gradle/wrapper
 gradlew
 settings.gradle
