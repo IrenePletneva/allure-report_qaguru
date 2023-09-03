@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.11.2'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+def allureVersion = "2.23.0"
+
+allure {
+    report {
+        version.set(allureVersion)
+    }
+    adapter { // отвечает за появление папочки build/allure-results
+        aspectjWeaver.set(true) //обработка аннотации @Step
+        frameworks {
+            junit5 { //название фреймворка
+                adapterVersion.set(allureVersion) //версия интеграции фреймворка и Allure
+            }
+        }
+    }
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+            testImplementation(
+                    'org.junit.jupiter:junit-jupiter:5.9.3',
+                    'com.codeborne:selenide:6.16.0',
+                    'io.qameta.allure:allure-selenide:'+allureVersion,
+    )
+}
+test {
+    useJUnitPlatform()
+    systemProperties(System.getProperties())
+}
